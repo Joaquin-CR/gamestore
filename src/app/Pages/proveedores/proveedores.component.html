@@ -62,24 +62,24 @@
 
                 <tbody class="divide-y divide-gray-800">
                   @for (prov of listaProveedores; track prov.cve_prov) {
-                  <tr>
+                  <tr class="group">
                     <td
-                      class="whitespace-nowrap select-none py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0"
+                      class="whitespace-nowrap select-none py-4 pl-4 pr-3 text-sm font-medium text-white group-hover:cursor-pointer group-hover:bg-gray-700"
                     >
                       {{ prov.cve_prov }}
                     </td>
                     <td
-                      class="whitespace-nowrap select-none px-3 py-4 text-sm text-gray-300"
+                      class="whitespace-nowrap select-none px-3 py-4 text-sm text-gray-300 group-hover:cursor-pointer group-hover:bg-gray-700"
                     >
                       {{ prov.nom_prov }}
                     </td>
                     <td
-                      class="whitespace-nowrap select-none px-3 py-4 text-sm text-gray-300"
+                      class="whitespace-nowrap select-none px-3 py-4 text-sm text-gray-300 group-hover:cursor-pointer group-hover:bg-gray-700"
                     >
                       {{ prov.email_prov }}
                     </td>
                     <td
-                      class="whitespace-nowrap select-none px-3 py-4 text-sm text-gray-300"
+                      class="whitespace-nowrap select-none px-3 py-4 text-sm text-gray-300 group-hover:cursor-pointer group-hover:bg-gray-700"
                     >
                       {{ prov.tel_prov }}
                     </td>
