@@ -1,3 +1,3 @@
 export const environment = {
-    urlServiceSGA: 'http://localhost:8080'
+  urlService: 'http://localhost:8080',
 };
