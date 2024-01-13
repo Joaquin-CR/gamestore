@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { ProveedoresService } from '../../Services/proveedores.service';
 import { Proveedor } from '../../../interfaces/types';
+import { ProveedoresService } from '../../Services/proveedores.service';
 
 @Component({
   selector: 'app-proveedores',
-  standalone: false,
+  standalone: true,
+  imports: [],
   templateUrl: './proveedores.component.html',
-  styleUrl: './proveedores.component.css'
+  styleUrl: './proveedores.component.css',
 })
 export class ProveedoresComponent {
   listaProveedores: Proveedor[] = [];
 
-  constructor(private _proveedorService: ProveedoresService) { }
+  constructor(private _proveedorService: ProveedoresService) {}
 
   ngOnInit() {
     this._proveedorService.getAllProveedores().subscribe({
@@ -23,7 +24,7 @@ export class ProveedoresComponent {
       error: (error) => {
         console.log('Error:', error.status);
       },
-      complete: () => { },
+      complete: () => {},
     });
   }
 
