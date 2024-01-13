@@ -1,5 +1,4 @@
 <div class="bg-gray-900 min-h-screen">
-  <!-- <app-modal></app-modal> -->
   <div class="mx-auto max-w-7xl">
     <div class="bg-gray-900 py-10">
       <div class="px-4 sm:px-6 lg:px-8">
@@ -69,34 +68,38 @@
 
                 <tbody class="divide-y divide-gray-800">
                   @for (vid of listaVideojuegos; track vid.cve_vid) {
-                  <tr>
+                  <tr class="group">
                     <td
-                      class="select-none py-4 px-3 text-sm font-medium text-white text-center"
+                      (click)="goToVidoejuego(vid.cve_vid)"
+                      class="select-none py-4 px-3 text-sm font-medium text-white text-center group-hover:bg-gray-700 group-hover:cursor-pointer"
                     >
                       {{ vid.cve_vid }}
                     </td>
                     <td
-                      class="select-none px-3 py-4 text-sm text-white text-center"
+                      (click)="goToVidoejuego(vid.cve_vid)"
+                      class="select-none px-3 py-4 text-sm text-white text-center group-hover:bg-gray-700 group-hover:cursor-pointer"
                     >
                       {{ vid.tit_vid }}
                     </td>
                     <td
-                      class="select-none px-3 py-4 text-sm text-white text-center"
+                      (click)="goToVidoejuego(vid.cve_vid)"
+                      class="select-none px-3 py-4 text-sm text-white text-center group-hover:bg-gray-700 group-hover:cursor-pointer"
                     >
-                      <!-- ${{ vid.pre_vid }} -->
-                      <!-- !CHECAR -->
                       {{
                         vid.pre_vid
                           | currency : "MXN" : "symbol-narrow" : "1.2-2"
                       }}
                     </td>
                     <td
-                      class="select-none px-3 py-4 text-sm text-white text-center"
+                      (click)="goToVidoejuego(vid.cve_vid)"
+                      class="select-none px-3 py-4 text-sm text-white text-center group-hover:bg-gray-700 group-hover:cursor-pointer"
                     >
-                      {{ vid.proveedor.nom_prov }}
+                      <p class="hidden">{{ vid.proveedorId }}</p>
+                      {{ vid.nombreProveedor }}
                     </td>
                     <td
-                      class="select-none px-3 py-4 text-sm text-white text-center"
+                      (click)="goToVidoejuego(vid.cve_vid)"
+                      class="select-none px-3 py-4 text-sm text-white text-center group-hover:bg-gray-700 group-hover:cursor-pointer"
                     >
                       {{ vid.inv_vid }}
                     </td>
