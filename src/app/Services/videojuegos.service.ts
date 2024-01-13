@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class VideojuegosService {
-  protected url: string = environment.urlServiceSGA + '/videojuegos';
+  protected url: string = environment.urlService + '/videojuegos';
 
   constructor(private httpClient: HttpClient) {}
 

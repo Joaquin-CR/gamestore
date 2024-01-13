@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProveedoresService {
+  protected url: string = environment.urlService + '/proveedores';
 
-  protected url: string = environment.urlServiceSGA + '/proveedores';
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getAllProveedores() {
     return this.httpClient.get(this.url);
