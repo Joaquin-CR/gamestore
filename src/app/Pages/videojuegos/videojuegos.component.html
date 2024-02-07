@@ -1,3 +1,9 @@
+@if (showModal) {
+<app-editmodal
+  [videojuegoInfo]="editVideojuego"
+  (setNullEditVid)="setNullModalVid()"
+></app-editmodal>
+}
 <div class="bg-gray-900 min-h-screen">
   <div class="mx-auto max-w-7xl">
     <div class="bg-gray-900 py-10">
@@ -15,6 +21,7 @@
             <button
               type="button"
               class="block rounded-md bg-indigo-500 px-3 py-2 text-center text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              (click)="goToNewVideojuego()"
             >
               Nuevo Videojuego
             </button>
@@ -59,7 +66,7 @@
                     >
                       Inventarios
                     </th>
-                    <th scope="col" class="relative py-3.5 pr-4 sm:pr-0">
+                    <th scope="col" class="relative py-3.5">
                       <span class="sr-only">Edit</span>
                     </th>
                   </tr>
@@ -103,12 +110,20 @@
                     >
                       {{ vid.inv_vid }}
                     </td>
-                    <td class="py-4 px-3 text-sm font-medium text-center flex">
+                    <td
+                      class="py-4 text-sm font-medium text-center flex gap-x-6"
+                    >
                       <p
                         class="text-indigo-400 hover:text-indigo-300 select-none cursor-pointer text-center"
-                        (click)="editarvideojuego(vid.cve_vid)"
+                        (click)="editarvideojuego(vid)"
                       >
                         Editar
+                      </p>
+                      <p
+                        class="text-red-600 hover:text-red-500 select-none cursor-pointer text-center"
+                        (click)="eliminarVideojuego(vid)"
+                      >
+                        Eliminar
                       </p>
                     </td>
                   </tr>
