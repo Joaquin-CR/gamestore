@@ -25,6 +25,10 @@ export class NavbarComponent {
             this.vistaActual = 'videojuego';
           } else if (event.url.includes('/proveedores/')) {
             this.vistaActual = 'proveedor';
+          } else if (event.url.includes('/editVideojuego/')) {
+            this.vistaActual = 'edit videojuego';
+          } else if (event.url.includes('/newVideojuego')) {
+            this.vistaActual = 'new videojuego';
           }
         } else {
           this.vistaActual = 'videojuegos';
