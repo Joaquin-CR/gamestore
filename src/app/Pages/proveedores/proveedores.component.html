@@ -25,8 +25,8 @@
             <div
               class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
             >
+              @if (listaProveedores.length > 0) {
               <table class="min-w-full divide-y divide-gray-700">
-                @if (listaProveedores.length > 0) {
                 <thead>
                   <tr>
                     <th
@@ -58,8 +58,6 @@
                     </th>
                   </tr>
                 </thead>
-                }
-
                 <tbody class="divide-y divide-gray-800">
                   @for (prov of listaProveedores; track prov.cve_prov) {
                   <tr class="group">
@@ -99,6 +97,9 @@
                   }
                 </tbody>
               </table>
+              } @else {
+              <p class="text-gray-300">No hay proveedores para mostrar</p>
+              }
             </div>
           </div>
         </div>
