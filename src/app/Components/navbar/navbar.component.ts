@@ -11,6 +11,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarComponent {
   vistaActual: string = 'videojuegos';
+  hiddenNavbar: boolean = true;
 
   constructor(private router: Router) {}
 
@@ -18,20 +19,25 @@ export class NavbarComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Verifica la URL actual después de cada navegación
-        if (event.url != '/videojuegos') {
-          if (event.url.includes('proveedores')) {
-            this.vistaActual = 'proveedores';
-          } else if (event.url.includes('/videojuegos/')) {
-            this.vistaActual = 'videojuego';
-          } else if (event.url.includes('/proveedores/')) {
-            this.vistaActual = 'proveedor';
-          } else if (event.url.includes('/editVideojuego/')) {
-            this.vistaActual = 'edit videojuego';
-          } else if (event.url.includes('/newVideojuego')) {
-            this.vistaActual = 'new videojuego';
-          }
+        if (event.url.includes('login') || event.url.includes('signup')) {
+          this.hiddenNavbar = true;
         } else {
-          this.vistaActual = 'videojuegos';
+          this.hiddenNavbar = false;
+          if (event.url != '/videojuegos') {
+            if (event.url.includes('proveedores')) {
+              this.vistaActual = 'proveedores';
+            } else if (event.url.includes('/videojuegos/')) {
+              this.vistaActual = 'videojuego';
+            } else if (event.url.includes('/proveedores/')) {
+              this.vistaActual = 'proveedor';
+            } else if (event.url.includes('/editVideojuego/')) {
+              this.vistaActual = 'edit videojuego';
+            } else if (event.url.includes('/newVideojuego')) {
+              this.vistaActual = 'new videojuego';
+            }
+          } else {
+            this.vistaActual = 'videojuegos';
+          }
         }
       }
     });

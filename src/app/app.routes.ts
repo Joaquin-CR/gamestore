@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { LoginComponent } from './Pages/login/login.component';
 import { NewEditProvComponent } from './Pages/new-edit-prov/new-edit-prov.component';
 import { NewEditVidComponent } from './Pages/new-edit-vid/new-edit-vid.component';
 import { ProveedorComponent } from './Pages/proveedor/proveedor.component';
@@ -8,6 +9,11 @@ import { VideojuegosComponent } from './Pages/videojuegos/videojuegos.component'
 
 export const routes: Routes = [
   { path: '', redirectTo: 'videojuegos', pathMatch: 'full' },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Login',
+  },
   {
     path: 'videojuegos',
     component: VideojuegosComponent,
